@@ -68,6 +68,7 @@ def keyPressed(app, event):
         print(app.face)
         img = cv2.imread(app.face)
         faceSwap.faceSwap(img)
+            
     elif event.key == 'k':
         app.face = 'koz.png'
         print(app.face)

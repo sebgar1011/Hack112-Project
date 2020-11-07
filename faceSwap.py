@@ -20,6 +20,8 @@ def faceSwap(img):
     mask = np.zeros_like(img_gray)
 
     cap = cv2.VideoCapture(0)
+    cap.set(3, 600)
+    cap.set(4, 800)
 
     detector = dlib.get_frontal_face_detector()
     predictor = dlib.shape_predictor("shape_predictor_68_face_landmarks.dat")
