@@ -4,7 +4,8 @@ import dlib
 import time
 import random
 
-#https://pysource.com/2019/05/28/face-swapping-explained-in-8-steps-opencv-with-python/ 
+
+#altered from https://pysource.com/2019/05/28/face-swapping-explained-in-8-steps-opencv-with-python/ 
 def extract_index_nparray(nparray):
     index = None
     for num in nparray[0]:
@@ -16,7 +17,6 @@ faces = ["koz.png", "agermer.jpg", "ahunter2.jpg",
         "alanhsu.jpg", "alexx.jpg", "andrewh1.jpg"]
 
 face =  random.choice(faces)
-
 img = cv2.imread(face)
 
 img_gray = cv2.cvtColor(img, cv2.COLOR_BGR2GRAY)
