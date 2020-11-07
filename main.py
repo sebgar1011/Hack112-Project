@@ -60,15 +60,21 @@ def appStarted(app):
                 "vbeaudoi.jpg",
                 "yizes.jpg"
                 ]
+    app.face = None
 
 def keyPressed(app, event):
     if event.key == 'c':
-        face = random.choice(app.facesList)
-        print(face)
-        img = cv2.imread(face)
+        app.face = random.choice(app.facesList)
+        print(app.face)
+        img = cv2.imread(app.face)
+        faceSwap.faceSwap(img)
+    elif event.key == 'k':
+        app.face = 'koz.png'
+        print(app.face)
+        img = cv2.imread(app.face)
         faceSwap.faceSwap(img)
 
 def redrawAll(app, canvas):
-    canvas.create_text(app.width/2, app.height/2, text = "Press C to swap face, ESC to quit.", font = 'Arial 14')
+    canvas.create_text(app.width/2, app.height/2 - 10, text = "Press C to swap face, T for Kozbie face, ESC to quit.", font = 'Arial 14')
 
-runApp(width = 300, height = 80)
+runApp(width = 400, height = 80)
