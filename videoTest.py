@@ -29,8 +29,7 @@ while True:
             y = landmarks.part(n).y
             cv2.circle(frame, (x, y), 4, (255, 0, 0), -1)
 
-    cv2.imshow("Frame", frame)
 
-    key = cv2.waitKey(1)
-    if key == 27:
+    cv2.imshow("Camera", frame)
+    if cv2.waitKey(1) & 0xFF == ord('q'):
         break
