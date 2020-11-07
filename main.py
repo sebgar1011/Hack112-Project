@@ -67,11 +67,11 @@ def keyPressed(app, event):
     #TA Swap
     if event.key == 's':
         app.face = random.choice(app.facesList)
-        #print(app.face)
+        guessStaff(app.face)
         img = cv2.imread(app.face)
         try: 
             faceSwap.faceSwap(img)
-            guessStaff(app.face)
+            
         except:
             print("OOPS")
         
@@ -79,11 +79,11 @@ def keyPressed(app, event):
     #Taylor Swap
     elif event.key == 't':
         app.face = 'taylor.jpg'
-        #print(app.face)
+        guessStaff(app.face)
         img = cv2.imread(app.face)
         try:
             faceSwap.faceSwap(img)
-            guessStaff(app.face)
+            
         except:
             print("OOPS")
         
@@ -91,11 +91,11 @@ def keyPressed(app, event):
     #Koz Swap
     elif event.key == 'k':
         app.face = 'koz.png'
-        #print(app.face)
+        guessStaff(app.face)
         img = cv2.imread(app.face)
         try:
             faceSwap.faceSwap(img)
-            guessStaff(app.face)
+            
         except:
             print("OOPS")
         
@@ -150,7 +150,9 @@ def guessStaff(face):
                 "tmauzy.jpg": 'tate',
                 "tyf.jpg": 'terry',
                 "vbeaudoi.jpg": 'vivian',
-                "yizes.jpg": 'sean'}
+                "yizes.jpg": 'sean',
+                'taylor.jpg': 'taylor',
+                'koz.png': 'kozbie'}
     staffName = staffDict[face]
     userInput = input('guess staff first name! --> ')
     if (userInput.lower() == staffName):
@@ -165,7 +167,7 @@ def redrawAll(app, canvas):
     canvas.create_text(app.width/2, app.height/2 - 25, text = "Press S to swap with a random TA's face,", font = 'Arial 20')
     canvas.create_text(app.width/2, app.height/2, text = "K for Prof Kozbie's face,", font = 'Arial 20')
     canvas.create_text(app.width/2, app.height/2 + 25, text = "T for Prof Taylor's face, ESC to quit.", font = 'Arial 20')
-    canvas.create_text(app.width/2, app.height/2 + 45, text = f'Score: {app.score}')
+    canvas.create_text(app.width/2, app.height + 35, text = f'Score: {app.score}')
 
 
 runApp(width = 500, height = 200)
