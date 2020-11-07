@@ -106,7 +106,7 @@ def guessStaff(face):
                 "anitama.jpg": 'anita',
                 "asadalis.jpg": 'asad',
                 "athontak.jpg": 'anjali',
-                "bradleyz.jpg": 'bradley,
+                "bradleyz.jpg": 'bradley',
                 "bsidwell.jpg": 'brittney',
                 "crystal3.jpg": 'crystal',
                 "drazek.jpg": 'dina',
@@ -124,7 +124,7 @@ def guessStaff(face):
                 "jzych.jpg": 'jake',
                 "katheriy.jpg": 'katherine',
                 "kbalenza.jpg": 'kyra',
-                "kecooper.jpg"" 'kaitlynn',
+                "kecooper.jpg": 'kaitlynn',
                 "knassre.jpg": 'kian',
                 "lnicolus.jpg": 'leo',
                 "lsands.jpg": 'lauren',
@@ -149,9 +149,9 @@ def guessStaff(face):
                 "vbeaudoi.jpg": 'vivian',
                 "yizes.jpg": 'sean'}
     staffName = staffDict[face]
-    userInput = input(guess staff first name! -->)
+    userInput = input('guess staff first name! --> ')
     if (userInput.lower() == staffName):
-        print('that's right!')
+        print("that's right!")
         app.score += 1
     else:
         print('nope!')
