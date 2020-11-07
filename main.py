@@ -7,9 +7,8 @@ import dlib
 from cmu_112_graphics import *
 
 
-#write down all the TA faces
+# Initialize TA image files
 def appStarted(app):
-    #app.score = 0
     app.facesList = ["agermer.jpg", 
                 "ahunter2.jpg",
                 "alanhsu.jpg", 
@@ -63,37 +62,13 @@ def appStarted(app):
                 ]
     app.face = None
 
-def keyPressed(app, event):
+# Swap face
+def swap(app):
+    img = cv2.imread('photos/' + app.face)
+    faceSwap.faceSwap(img)
 
-    #TA Swap
-    if event.key == 's':
-        app.face = random.choice(app.facesList)
-        
-        img = cv2.imread(app.face)
-        faceSwap.faceSwap(img)
-    
-        guessStaff(app.face)
-    
-    #Taylor Swap
-    elif event.key == 't':
-        app.face = 'taylor.jpg'
-        
-        img = cv2.imread(app.face)
-        faceSwap.faceSwap(img)
-
-        guessStaff(app.face)
-    
-    
-    #Koz Swap
-    elif event.key == 'k':
-        app.face = 'koz.png'
-        
-        img = cv2.imread(app.face)
-        faceSwap.faceSwap(img)
-
-        guessStaff(app.face)        
-
-def guessStaff(face):
+# Print out the correct staff name
+def guessStaff(app):
     staffDict = {"agermer.jpg": 'amy', 
                 "ahunter2.jpg": 'allison',
                 "alanhsu.jpg": 'alan', 
@@ -146,9 +121,32 @@ def guessStaff(face):
                 "yizes.jpg": 'sean',
                 'taylor.jpg': 'taylor',
                 'koz.png': 'kosbie'}
-    staffName = staffDict[face]
+    staffName = staffDict[app.face]
     print(staffName)
 
+# Swap face when key pressed
+def keyPressed(app, event):
+
+    #TA Swap
+    if event.key == 's':
+        app.face = random.choice(app.facesList)
+        swap(app)
+        guessStaff(app)
+    
+    #Taylor Swap
+    elif event.key == 't':
+        app.face = 'taylor.jpg'
+        swap(app)
+        guessStaff(app)
+    
+    
+    #Koz Swap
+    elif event.key == 'k':
+        app.face = 'koz.png'
+        swap(app)
+        guessStaff(app)        
+
+# Display instructions
 def redrawAll(app, canvas):
     canvas.create_rectangle(0, 0, app.width, app.height, fill = "light blue")
     canvas.create_text(app.width/2, app.height/2 - 25, text = "Press S to swap with a random TA's face,", font = 'Arial 20')
