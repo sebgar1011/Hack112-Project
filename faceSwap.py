@@ -5,14 +5,7 @@ import time
 
 
 # Code from https://pysource.com/2019/05/28/face-swapping-explained-in-8-steps-opencv-with-python/ 
-'''
-def extract_index_nparray(nparray):
-    index = None
-    for num in nparray[0]:
-        index = num
-        break
-    return index
-'''
+
 # Face 1
 def faceSwap(img):
 
@@ -169,9 +162,9 @@ def faceSwap(img):
 
         seamlessclone = cv2.seamlessClone(result, img2, img2_head_mask, center_face2, cv2.MIXED_CLONE)
 
-        cv2.imshow("img2", img2)
+        #cv2.imshow("img2", img2)
         cv2.imshow("clone", seamlessclone)
-        cv2.imshow("result", result)
+        #cv2.imshow("result", result)
 
         key = cv2.waitKey(1)
         if key == 27:
