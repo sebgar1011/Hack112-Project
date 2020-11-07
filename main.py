@@ -64,7 +64,7 @@ def appStarted(app):
     app.face = None
 
 def keyPressed(app, event):
-    
+
     #TA Swap
     if event.key == 's':
         app.face = random.choice(app.facesList)
@@ -149,6 +149,7 @@ def guessStaff(face):
                 'koz.png': 'kosbie'}
     staffName = staffDict[face]
     print(staffName)
+    
     '''
     userInput = input('guess staff first name! --> ')
     if (userInput.lower() == staffName):
@@ -163,6 +164,7 @@ def redrawAll(app, canvas):
     canvas.create_text(app.width/2, app.height/2 - 25, text = "Press S to swap with a random TA's face,", font = 'Arial 20')
     canvas.create_text(app.width/2, app.height/2, text = "K for Prof Kozbie's face,", font = 'Arial 20')
     canvas.create_text(app.width/2, app.height/2 + 25, text = "T for Prof Taylor's face, ESC to quit.", font = 'Arial 20')
+    
     #canvas.create_text(app.width/2, app.height/2 + 45, text = f'Score: {app.score}')
 
 
