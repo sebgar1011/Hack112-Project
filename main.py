@@ -63,6 +63,7 @@ def appStarted(app):
     app.face = None
 
 def keyPressed(app, event):
+    #TA Swap
     if event.key == 's':
         app.face = random.choice(app.facesList)
         print(app.face)
@@ -71,7 +72,8 @@ def keyPressed(app, event):
             faceSwap.faceSwap(img)
         except:
             print("OOPS")
-            
+    
+    #Taylor Swap
     elif event.key == 't':
         app.face = 'taylor.jpg'
         print(app.face)
@@ -81,6 +83,7 @@ def keyPressed(app, event):
         except:
             print("OOPS")
 
+    #Koz Swap
     elif event.key == 'k':
         app.face = 'koz.png'
         print(app.face)
