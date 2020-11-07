@@ -13,11 +13,21 @@ def extract_index_nparray(nparray):
         break
     return index
 
-faces = ["koz.png", "agermer.jpg", "ahunter2.jpg",
+#write down all the faces
+facesList = ["agermer.jpg", "ahunter2.jpg",
         "alanhsu.jpg", "alexx.jpg", "andrewh1.jpg"]
 
-face =  random.choice(faces)
-img = cv2.imread(face)
+TAface =  random.choice(facesList)
+kozFace = "koz.png"
+
+img = cv2.imread(kozFace)
+
+#if open mouth: distance between point 63 and 67 > threshold,
+#change to random TA face
+'''
+if _________:
+    img = cv2.imread(TAface)
+'''
 
 img_gray = cv2.cvtColor(img, cv2.COLOR_BGR2GRAY)
 mask = np.zeros_like(img_gray)
