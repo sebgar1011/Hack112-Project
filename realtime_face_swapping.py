@@ -2,8 +2,9 @@ import cv2
 import numpy as np
 import dlib
 import time
+import random
 
-
+#https://pysource.com/2019/05/28/face-swapping-explained-in-8-steps-opencv-with-python/ 
 def extract_index_nparray(nparray):
     index = None
     for num in nparray[0]:
@@ -11,8 +12,13 @@ def extract_index_nparray(nparray):
         break
     return index
 
+faces = ["koz.png", "agermer.jpg", "ahunter2.jpg",
+        "alanhsu.jpg", "alexx.jpg", "andrewh1.jpg"]
 
-img = cv2.imread("koz.png")
+face =  random.choice(faces)
+
+img = cv2.imread(face)
+
 img_gray = cv2.cvtColor(img, cv2.COLOR_BGR2GRAY)
 mask = np.zeros_like(img_gray)
 
@@ -161,9 +167,9 @@ while True:
 
     seamlessclone = cv2.seamlessClone(result, img2, img2_head_mask, center_face2, cv2.MIXED_CLONE)
 
-    cv2.imshow("img2", img2)
+    #cv2.imshow("img2", img2)
     cv2.imshow("clone", seamlessclone)
-    cv2.imshow("result", result)
+    #cv2.imshow("result", result)
 
     key = cv2.waitKey(1)
     if key == 27:
