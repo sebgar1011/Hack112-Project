@@ -5,27 +5,34 @@ import time
 
 
 # Code from https://pysource.com/2019/05/28/face-swapping-explained-in-8-steps-opencv-with-python/ 
+'''
 def extract_index_nparray(nparray):
     index = None
     for num in nparray[0]:
         index = num
         break
     return index
-
-img = cv2.imread("koz.png")
-
-img_gray = cv2.cvtColor(img, cv2.COLOR_BGR2GRAY)
-mask = np.zeros_like(img_gray)
-
-cap = cv2.VideoCapture(0)
-
-detector = dlib.get_frontal_face_detector()
-predictor = dlib.shape_predictor("shape_predictor_68_face_landmarks.dat")
-
-indexes_triangles = []
-
+'''
 # Face 1
 def faceSwap(img):
+
+    def extract_index_nparray(nparray):
+        index = None
+        for num in nparray[0]:
+            index = num
+            break
+        return index
+
+    img_gray = cv2.cvtColor(img, cv2.COLOR_BGR2GRAY)
+    mask = np.zeros_like(img_gray)
+
+    cap = cv2.VideoCapture(0)
+
+    detector = dlib.get_frontal_face_detector()
+    predictor = dlib.shape_predictor("shape_predictor_68_face_landmarks.dat")
+
+    indexes_triangles = []
+
     faces = detector(img_gray)
     for face in faces:
         landmarks = predictor(img_gray, face)
@@ -172,5 +179,3 @@ def faceSwap(img):
 
     cap.release()
     cv2.destroyAllWindows()
-
-faceSwap(img)

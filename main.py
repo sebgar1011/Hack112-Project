@@ -1,11 +1,12 @@
 import cv2
-import numpy
+import numpy as np
 import sys
 import faceSwap
 import random
+import dlib
 
 
-#write down all the faces
+#write down all the TA faces
 facesList = ["agermer.jpg", 
              "ahunter2.jpg",
              "alanhsu.jpg", 
@@ -58,13 +59,8 @@ facesList = ["agermer.jpg",
              "yizes.jpg"
              ]
 
-TAface =  random.choice(facesList)
-kozFace = "koz.png"
+face = random.choice(facesList)
+print(face)
+img = cv2.imread(face)
 
-
-#if open mouth: distance between point 63 and 67 > threshold,
-#change to random TA face
-'''
-if _________:
-    img = cv2.imread(TAface)
-'''
+faceSwap.faceSwap(img)
