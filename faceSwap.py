@@ -5,14 +5,7 @@ import time
 
 
 # Code from https://pysource.com/2019/05/28/face-swapping-explained-in-8-steps-opencv-with-python/ 
-'''
-def extract_index_nparray(nparray):
-    index = None
-    for num in nparray[0]:
-        index = num
-        break
-    return index
-'''
+
 # Face 1
 def faceSwap(img):
 
