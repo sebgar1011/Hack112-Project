@@ -24,17 +24,22 @@ for face in faces:
 
     # Create landmark object
     landmarks = predictor(image=gray, box=face)
-
+    lst = []
     # Loop through all the points
     for n in range(0, 68):
         x = landmarks.part(n).x
         y = landmarks.part(n).y
-
+        lst.append([x, y])
         # Draw a circle
         cv2.circle(img=img, center=(x, y), radius=3, color=(0, 255, 0), thickness=-1)
 
+print(lst)
 # show the image
-cv2.imshow(winname="Face", mat=img)
+for index in range(len(lst)-1):
+    start = (lst[index][0], lst[index][1])
+    end = (lst[index+1][0], lst[index+1][1])
+    cv2.line(img, start, end, color=(120, 120, 120), thickness= 1)
+cv2.imshow(winname = 'Face', mat = img)  
 
 # Delay between every fram
 cv2.waitKey(delay=0)
