@@ -69,11 +69,8 @@ def keyPressed(app, event):
         app.face = random.choice(app.facesList)
         guessStaff(app.face)
         img = cv2.imread(app.face)
-        try: 
-            faceSwap.faceSwap(img)
-            
-        except:
-            print("OOPS")
+        faceSwap.faceSwap(img)
+    
         
     
     #Taylor Swap
@@ -144,7 +141,7 @@ def guessStaff(face):
                 "vbeaudoi.jpg": 'vivian',
                 "yizes.jpg": 'sean',
                 'taylor.jpg': 'taylor',
-                'koz.png': 'kozbie'}
+                'koz.png': 'kosbie'}
     staffName = staffDict[face]
     userInput = input('guess staff first name! --> ')
     if (userInput.lower() == staffName):
