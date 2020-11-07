@@ -169,9 +169,9 @@ def faceSwap(img):
 
         seamlessclone = cv2.seamlessClone(result, img2, img2_head_mask, center_face2, cv2.MIXED_CLONE)
 
-        #cv2.imshow("img2", img2)
+        cv2.imshow("img2", img2)
         cv2.imshow("clone", seamlessclone)
-        #cv2.imshow("result", result)
+        cv2.imshow("result", result)
 
         key = cv2.waitKey(1)
         if key == 27:
