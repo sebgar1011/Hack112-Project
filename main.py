@@ -65,7 +65,10 @@ def appStarted(app):
 # Swap face
 def swap(app):
     img = cv2.imread('photos/' + app.face)
-    faceSwap.faceSwap(img)
+    try:
+        faceSwap.faceSwap(img)
+    except Exception as e:
+        print(e)
 
 # Print out the correct staff name
 def guessStaff(app):
