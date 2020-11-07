@@ -36,11 +36,10 @@ while 1:
             ymin = int(y)
             ymax = int(y + h)
             # print(ymin, ymax)
-            # sh_glass = ymax - ymin
 
-            face_glass_roi_color = img[ymin:ymax, x:x+w]
+            roi_color = img[ymin:ymax, x:x+w]
 
-            specs = cv2.resize(specs_ori, (w, h),interpolation=cv2.INTER_CUBIC)
+            specs = cv2.resize(specs_ori, (w, h), interpolation=cv2.INTER_CUBIC)
             transparentOverlay(face_glass_roi_color,specs)
 
     cv2.imshow('Face', img)
