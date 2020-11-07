@@ -75,6 +75,9 @@ def keyPressed(app, event):
         faceSwap.faceSwap(img)
 
 def redrawAll(app, canvas):
-    canvas.create_text(app.width/2, app.height/2 - 10, text = "Press C to swap face, T for Kozbie face, ESC to quit.", font = 'Arial 14')
+    canvas.create_rectangle(0, 0, app.width, app.height, fill = "light blue")
+    canvas.create_text(app.width/2, app.height/2 - 15, text = "Press T to swap with a random TA's face,", font = 'Arial 20')
+    canvas.create_text(app.width/2, app.height/2 + 15, text = "K for Kozbie's face, ESC to quit.", font = 'Arial 20')
 
-runApp(width = 400, height = 80)
+
+runApp(width = 500, height = 200)
