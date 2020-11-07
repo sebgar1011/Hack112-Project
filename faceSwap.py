@@ -22,8 +22,8 @@ def faceSwap(img):
     cap = cv2.VideoCapture(0)
 
     #modified dimensions
-    cap.set(3, 600)
-    cap.set(4, 800)
+    #cap.set(3, 600)
+    #cap.set(4, 800)
 
     detector = dlib.get_frontal_face_detector()
     predictor = dlib.shape_predictor("shape_predictor_68_face_landmarks.dat")
