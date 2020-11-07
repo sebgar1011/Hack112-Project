@@ -32,5 +32,6 @@ while True:
     cv2.imshow("Frame", frame)
 
     key = cv2.waitKey(1)
-    if key == 27:
+    if key == 'Q':
+        cv.VideoCapture.release()
         break

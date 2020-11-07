@@ -35,10 +35,11 @@ for face in faces:
 
 print(lst)
 # show the image
-for index in range(len(lst)-1):
-    start = (lst[index][0], lst[index][1])
-    end = (lst[index+1][0], lst[index+1][1])
-    cv2.line(img, start, end, color=(120, 120, 120), thickness= 1)
+for index in range(len(lst)):
+    for index2 in range(len(lst)):
+        start = (lst[index][0], lst[index][1])
+        end = (lst[index2][0], lst[index2][1])
+        cv2.line(img, start, end, color=(120, 120, 120), thickness= 1)
 cv2.imshow(winname = 'Face', mat = img)  
 
 # Delay between every fram
