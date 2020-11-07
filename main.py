@@ -71,9 +71,10 @@ def keyPressed(app, event):
         img = cv2.imread(app.face)
         try: 
             faceSwap.faceSwap(img)
+            guessStaff(app.face)
         except:
             print("OOPS")
-        guessStaff(app.face)
+        
     
     #Taylor Swap
     elif event.key == 't':
@@ -82,9 +83,10 @@ def keyPressed(app, event):
         img = cv2.imread(app.face)
         try:
             faceSwap.faceSwap(img)
+            guessStaff(app.face)
         except:
             print("OOPS")
-        guessStaff(app.face)
+        
 
     #Koz Swap
     elif event.key == 'k':
@@ -93,9 +95,10 @@ def keyPressed(app, event):
         img = cv2.imread(app.face)
         try:
             faceSwap.faceSwap(img)
+            guessStaff(app.face)
         except:
             print("OOPS")
-        guessStaff(app.face)
+        
 
 def guessStaff(face):
     staffDict = {"agermer.jpg": 'amy', 
