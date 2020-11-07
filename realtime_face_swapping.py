@@ -12,7 +12,7 @@ def extract_index_nparray(nparray):
     return index
 
 
-img = cv2.imread("dkosbie.png")
+img = cv2.imread("koz.png")
 img_gray = cv2.cvtColor(img, cv2.COLOR_BGR2GRAY)
 mask = np.zeros_like(img_gray)
 
