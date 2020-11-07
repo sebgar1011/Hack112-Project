@@ -2,6 +2,9 @@ import cv2
 import numpy as np
 import dlib
 
+
+#https://pysource.com/2019/03/12/face-landmarks-detection-opencv-with-python/
+
 cap = cv2.VideoCapture(0)
 
 detector = dlib.get_frontal_face_detector()
@@ -25,7 +28,6 @@ while True:
             x = landmarks.part(n).x
             y = landmarks.part(n).y
             cv2.circle(frame, (x, y), 4, (255, 0, 0), -1)
-
 
     cv2.imshow("Frame", frame)
 
