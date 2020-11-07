@@ -153,7 +153,7 @@ def keyPressed(app, event):
         
 def drawSplash(app, canvas):
     canvas.create_text(app.width/2, app.height/2, text='112 TA Face Swap!')
-    canvas.create_text(app.width.2, app.height/2 + 15, text='Press space to begin')
+    canvas.create_text(app.width/2, app.height/2 + 15, text='Press space to begin')
 
 # Display instructions
 def redrawAll(app, canvas):
