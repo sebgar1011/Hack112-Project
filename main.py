@@ -152,7 +152,7 @@ def guessStaff(face):
                 "vbeaudoi.jpg": 'vivian',
                 "yizes.jpg": 'sean',
                 'taylor.jpg': 'taylor',
-                'koz.png': 'kozbie'}
+                'koz.png': 'kosbie'}
     staffName = staffDict[face]
     userInput = input('guess staff first name! --> ')
     if (userInput.lower() == staffName):
