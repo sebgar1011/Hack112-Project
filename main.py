@@ -9,6 +9,7 @@ from cmu_112_graphics import *
 
 # Initialize TA image files
 def appStarted(app):
+    app.splash = True
     app.facesList = ["agermer.jpg", 
                 "ahunter2.jpg",
                 "alanhsu.jpg", 
@@ -129,9 +130,10 @@ def guessStaff(app):
 
 # Swap face when key pressed
 def keyPressed(app, event):
-
+    if (app.splash):
+        app.splash = False
     #TA Swap
-    if event.key == 's':
+    elif event.key == 's':
         app.face = random.choice(app.facesList)
         swap(app)
         guessStaff(app)
@@ -147,13 +149,20 @@ def keyPressed(app, event):
     elif event.key == 'k':
         app.face = 'koz.png'
         swap(app)
-        guessStaff(app)        
+        guessStaff(app)    
+        
+def drawSplash(app, canvas):
+    canvas.create_text(app.width/2, app.height/2, text='112 TA Face Swap!')
+    canvas.create_text(app.width.2, app.height/2 + 15, text='Press space to begin')
 
 # Display instructions
 def redrawAll(app, canvas):
-    canvas.create_rectangle(0, 0, app.width, app.height, fill = "light blue")
-    canvas.create_text(app.width/2, app.height/2 - 25, text = "Press S to swap with a random TA's face,", font = 'Arial 20')
-    canvas.create_text(app.width/2, app.height/2, text = "K for Prof Kozbie's face,", font = 'Arial 20')
-    canvas.create_text(app.width/2, app.height/2 + 25, text = "T for Prof Taylor's face, ESC to quit.", font = 'Arial 20')
+    if (app.splash):
+        drawSplash(app, canvas)
+    else:
+        canvas.create_rectangle(0, 0, app.width, app.height, fill = "light blue")
+        canvas.create_text(app.width/2, app.height/2 - 25, text = "Press S to swap with a random TA's face,", font = 'Arial 20')
+        canvas.create_text(app.width/2, app.height/2, text = "K for Prof Kozbie's face,", font = 'Arial 20')
+        canvas.create_text(app.width/2, app.height/2 + 25, text = "T for Prof Taylor's face, ESC to quit.", font = 'Arial 20')
 
 runApp(width = 500, height = 200)
