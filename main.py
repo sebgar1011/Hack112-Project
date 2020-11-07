@@ -59,11 +59,12 @@ def appStarted(app):
                 "tyf.jpg",
                 "vbeaudoi.jpg",
                 "yizes.jpg"
+                "taylor.jpg"
                 ]
     app.face = None
 
 def keyPressed(app, event):
-    if event.key == 't':
+    if event.key == 's':
         app.face = random.choice(app.facesList)
         print(app.face)
         img = cv2.imread(app.face)
@@ -72,6 +73,15 @@ def keyPressed(app, event):
         except:
             print("OOPS")
             
+    elif event.key == 't':
+        app.face = 'taylor.jpg'
+        print(app.face)
+        img = cv2.imread(app.face)
+        try:
+            faceSwap.faceSwap(img)
+        except:
+            print("OOPS")
+
     elif event.key == 'k':
         app.face = 'koz.png'
         print(app.face)
@@ -83,8 +93,9 @@ def keyPressed(app, event):
 
 def redrawAll(app, canvas):
     canvas.create_rectangle(0, 0, app.width, app.height, fill = "light blue")
-    canvas.create_text(app.width/2, app.height/2 - 15, text = "Press T to swap with a random TA's face,", font = 'Arial 20')
-    canvas.create_text(app.width/2, app.height/2 + 15, text = "K for Kozbie's face, ESC to quit.", font = 'Arial 20')
+    canvas.create_text(app.width/2, app.height/2 - 15, text = "Press S to swap with a random TA's face,", font = 'Arial 20')
+    canvas.create_text(app.width/2, app.height/2 + 15, text = "K for Prof Kozbie's face, ESC to quit.", font = 'Arial 20')
+    canvas.create_text(app.width/2, app.height/2 + 40, text = "T for Prof Taylor's face, ESC to quit.", font = 'Arial 20')
 
 
 runApp(width = 500, height = 200)
