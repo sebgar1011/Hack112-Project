@@ -67,13 +67,19 @@ def keyPressed(app, event):
         app.face = random.choice(app.facesList)
         print(app.face)
         img = cv2.imread(app.face)
-        faceSwap.faceSwap(img)
+        try: 
+            faceSwap.faceSwap(img)
+        except:
+            print("OOPS")
             
     elif event.key == 'k':
         app.face = 'koz.png'
         print(app.face)
         img = cv2.imread(app.face)
-        faceSwap.faceSwap(img)
+        try:
+            faceSwap.faceSwap(img)
+        except:
+            print("OOPS")
 
 def redrawAll(app, canvas):
     canvas.create_rectangle(0, 0, app.width, app.height, fill = "light blue")
