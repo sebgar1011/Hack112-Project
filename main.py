@@ -152,8 +152,9 @@ def keyPressed(app, event):
         guessStaff(app)    
         
 def drawSplash(app, canvas):
-    canvas.create_text(app.width/2, app.height/2, text='112 TA Face Swap!')
-    canvas.create_text(app.width/2, app.height/2 + 15, text='Press space to begin')
+    canvas.create_rectangle(0, 0, app.width, app.height, fill = "light yellow")
+    canvas.create_text(app.width/2, app.height/2 - 10, text='How well do you know your 112 Staff?!?!', font = 'Arial 20 bold')
+    canvas.create_text(app.width/2, app.height/2 + 20, text='Press space to begin', font = 'Arial 16')
 
 # Display instructions
 def redrawAll(app, canvas):
