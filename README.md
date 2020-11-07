@@ -1,4 +1,6 @@
 # Hack112-Project
 
-#Hi, this is a test 
-hello - kelly
+## MVP
+- Track face
+- Detect emotion
+- Place expressions on mask
