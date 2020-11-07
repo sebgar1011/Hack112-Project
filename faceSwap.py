@@ -20,6 +20,8 @@ def faceSwap(img):
     mask = np.zeros_like(img_gray)
 
     cap = cv2.VideoCapture(0)
+
+    #modified dimensions
     cap.set(3, 600)
     cap.set(4, 800)
 
