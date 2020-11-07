@@ -1,5 +1,6 @@
 # Hack112-Project
 
-# Ideas:
-# Checking Code Tracing answers
-# ???
+Ideas with OpenCV:
+Checking Code Tracing answers
+Mask detection
+Drawing things on screen with motion
