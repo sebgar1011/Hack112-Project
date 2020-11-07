@@ -69,11 +69,8 @@ def keyPressed(app, event):
         app.face = random.choice(app.facesList)
         guessStaff(app.face)
         img = cv2.imread(app.face)
-        try: 
-            faceSwap.faceSwap(img)
-            
-        except:
-            print("OOPS")
+        faceSwap.faceSwap(img)
+    
         
     
     #Taylor Swap
@@ -81,23 +78,16 @@ def keyPressed(app, event):
         app.face = 'taylor.jpg'
         guessStaff(app.face)
         img = cv2.imread(app.face)
-        try:
-            faceSwap.faceSwap(img)
-            
-        except:
-            print("OOPS")
-        
+        faceSwap.faceSwap(img)
+ 
 
     #Koz Swap
     elif event.key == 'k':
         app.face = 'koz.png'
         guessStaff(app.face)
         img = cv2.imread(app.face)
-        try:
-            faceSwap.faceSwap(img)
-            
-        except:
-            print("OOPS")
+        faceSwap.faceSwap(img)
+    
         
 
 def guessStaff(face):
