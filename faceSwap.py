@@ -2,7 +2,6 @@ import cv2
 import numpy as np
 import dlib
 import time
-import random
 
 
 # Code from https://pysource.com/2019/05/28/face-swapping-explained-in-8-steps-opencv-with-python/ 
