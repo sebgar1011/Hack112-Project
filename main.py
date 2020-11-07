@@ -81,24 +81,16 @@ def keyPressed(app, event):
         app.face = 'taylor.jpg'
         guessStaff(app.face)
         img = cv2.imread(app.face)
-        try:
-            faceSwap.faceSwap(img)
-            
-        except:
-            print("OOPS")
-        
-
+        faceSwap.faceSwap(img)
+    
+    
     #Koz Swap
     elif event.key == 'k':
         app.face = 'koz.png'
         guessStaff(app.face)
         img = cv2.imread(app.face)
-        try:
-            faceSwap.faceSwap(img)
-            
-        except:
-            print("OOPS")
-        
+        faceSwap.faceSwap(img)
+           
 
 def guessStaff(face):
     staffDict = {"agermer.jpg": 'amy', 
@@ -157,7 +149,7 @@ def guessStaff(face):
     userInput = input('guess staff first name! --> ')
     if (userInput.lower() == staffName):
         print("that's right!")
-        app.score += 1
+        #app.score += 1
     else:
         print('nope!')
         
@@ -167,7 +159,7 @@ def redrawAll(app, canvas):
     canvas.create_text(app.width/2, app.height/2 - 25, text = "Press S to swap with a random TA's face,", font = 'Arial 20')
     canvas.create_text(app.width/2, app.height/2, text = "K for Prof Kozbie's face,", font = 'Arial 20')
     canvas.create_text(app.width/2, app.height/2 + 25, text = "T for Prof Taylor's face, ESC to quit.", font = 'Arial 20')
-    canvas.create_text(app.width/2, app.height + 35, text = f'Score: {app.score}')
+    #canvas.create_text(app.width/2, app.height + 35, text = f'Score: {app.score}')
 
 
 runApp(width = 500, height = 200)
