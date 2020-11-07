@@ -63,7 +63,7 @@ def appStarted(app):
     app.face = None
 
 def keyPressed(app, event):
-    if event.key == 'c':
+    if event.key == 't':
         app.face = random.choice(app.facesList)
         print(app.face)
         img = cv2.imread(app.face)
