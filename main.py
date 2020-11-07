@@ -98,7 +98,7 @@ def guessStaff(app):
                 "jzych.jpg": 'jake',
                 "katheriy.jpg": 'katherine',
                 "kbalenza.jpg": 'kyra',
-                "kecooper.jpg": 'kaitlynn',
+                "kecooper.jpg": 'kaitlyn',
                 "knassre.jpg": 'kian',
                 "lnicolus.jpg": 'leo',
                 "lsands.jpg": 'lauren',
