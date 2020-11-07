@@ -93,9 +93,9 @@ def keyPressed(app, event):
 
 def redrawAll(app, canvas):
     canvas.create_rectangle(0, 0, app.width, app.height, fill = "light blue")
-    canvas.create_text(app.width/2, app.height/2 - 15, text = "Press S to swap with a random TA's face,", font = 'Arial 20')
-    canvas.create_text(app.width/2, app.height/2 + 15, text = "K for Prof Kozbie's face, ESC to quit.", font = 'Arial 20')
-    canvas.create_text(app.width/2, app.height/2 + 40, text = "T for Prof Taylor's face, ESC to quit.", font = 'Arial 20')
+    canvas.create_text(app.width/2, app.height/2 - 25, text = "Press S to swap with a random TA's face,", font = 'Arial 20')
+    canvas.create_text(app.width/2, app.height/2, text = "K for Prof Kozbie's face, ESC to quit.", font = 'Arial 20')
+    canvas.create_text(app.width/2, app.height/2 + 25, text = "T for Prof Taylor's face, ESC to quit.", font = 'Arial 20')
 
 
 runApp(width = 500, height = 200)
